@@ -6,4 +6,8 @@ public class Raum {
         this.number = number;
         this.capacity = capacity;
     }
+
+    public int getNumber() {
+        return number;
+    }
 }

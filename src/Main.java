@@ -1,14 +1,16 @@
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 public class Main {
 
-    public static List<Raum> rooms;
+    public List<Raum> rooms;
+    public List<Veranstaltung> events;
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
         for(int i = 0; i < 100; i++) {
             Raum r = new Raum(i,i+3);
-            rooms.add(r);
+            addRoom(r);
         }
 
     }
@@ -23,6 +25,16 @@ public class Main {
 
     public void removeRoom(Raum r) {
         rooms.remove(r);
+    }
+
+    public void checkRoomAtTimeslot(int room,Timeslot t) {
+
+        for(Veranstaltung v : events) {
+            if(v.getTimeslot().equals(t) && v.getRoom().getNumber() == room) {
+                System.out.println("Room " + room + " is already occupied at timeslot " + t);
+                return;
+            }
+        }
     }
 
 }
