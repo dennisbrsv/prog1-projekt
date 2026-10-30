@@ -15,9 +15,16 @@ sohn
 * The Main class initializes a List which will hold all room-numbers you can choose from. It utilizes the "Raum"-datatype which is briefly explained in the [Data-classes](#TOP)-section
 
 
-## Methods
+## Methods of Main
 
 * main() fills the List<Raum> rooms with elements that hold the repressenting room-number
 * getRooms() returns rooms 
 * addRoom() adds a element to the "rooms" List. the other methods do as the names describe
 * checRoomAtTimeslot() prints to the terminal wether or not the room is available at the given timeslot
+
+## Methods of Veranstaltungen
+
+
+## Methods of Raum
+
+
