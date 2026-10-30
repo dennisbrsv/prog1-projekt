@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Main {
 
-    private static List<Raum> rooms;
+    public static List<Raum> rooms;
 
     public static void main(String[] args) {
 
@@ -25,7 +25,4 @@ public class Main {
         rooms.remove(r);
     }
 
-    public void bookRoom(Raum r, Veranstaltung veranstaltung, int requiredCapacity) {
-        return;
-    }
 }
