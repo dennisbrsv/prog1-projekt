@@ -3,7 +3,7 @@ public class Veranstaltung {
     private String name;
     private String date;
     private Raum room;
-    private int capacity = Integer.MAX_VALUE;
+    private int capacity = 0;
 
     public Veranstaltung(String name, String date, Raum room, int capacity) {
         this.name = name;
