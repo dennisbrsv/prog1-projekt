@@ -13,4 +13,13 @@ public class Veranstaltung {
         this.capacity = capacity;
         this.timeslot = timeslot;
     }
+
+
+    public Object getTimeslot() {
+        return timeslot;
+    }
+
+    public Raum getRoom() {
+        return room;
+    }
 }
