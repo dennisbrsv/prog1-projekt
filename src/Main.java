@@ -25,7 +25,7 @@ public class Main {
         rooms.remove(r);
     }
 
-    public void bookRoom(Timeslot timeslot, Raum r, Veranstaltung veranstaltung, int requiredCapacity) {
+    public void bookRoom(Raum r, Veranstaltung veranstaltung, int requiredCapacity) {
         return;
     }
 }
