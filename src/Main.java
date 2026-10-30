@@ -26,14 +26,33 @@ public class Main {
         rooms.remove(r);
     }
 
-    public void checkRoomAtTimeslot(int room,Timeslot t) {
+    public Raum roomByNumber(int room) throws Exception {
+        for (Raum r : rooms) {
+            if (r.getNumber() == room) {
+                return r;
+            }
+        }
+        throw new Exception("Nein");
+    }
+
+    public boolean checkRoomAvailability(int room,Timeslot t) {
 
         for(Veranstaltung v : events) {
             if(v.getTimeslot().equals(t) && v.getRoom().getNumber() == room) {
-                System.out.println("Room " + room + " is already occupied at timeslot " + t.toString());
-                return;
+                return false;
             }
         }
+        return true;
+    }
+
+    public void bookRoom(int room, Timeslot t, int capacity, String name, String date) throws IllegalAccessException {
+
+        if (!checkRoomAvailability(room, t)) {
+            throw new IllegalAccessException("Der Raum ist an Timeslot " + t + " schon besetzt.");
+        }
+
+        Veranstaltung event = new Veranstaltung(name, date);
+
     }
 
 }
