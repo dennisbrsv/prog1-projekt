@@ -26,7 +26,7 @@ public class Main {
         rooms.remove(r);
     }
 
-    public Raum roomByNumber(int room) throws Exception {
+    public Raum getRoomByNumber(int room) throws Exception {
         for (Raum r : rooms) {
             if (r.getNumber() == room) {
                 return r;
@@ -45,13 +45,23 @@ public class Main {
         return true;
     }
 
-    public void bookRoom(int room, Timeslot t, int capacity, String name, String date) throws IllegalAccessException {
+    public void bookRoom(int room, Timeslot t, int capacity, String name, String date) throws Exception {
 
         if (!checkRoomAvailability(room, t)) {
             throw new IllegalAccessException("Der Raum ist an Timeslot " + t + " schon besetzt.");
         }
 
-        Veranstaltung event = new Veranstaltung(name, date);
+        Raum roomObject;
+
+        try {
+            roomObject = getRoomByNumber(room);
+        }
+        catch (Exception e) {
+            throw new Exception("Nein");
+        }
+
+        Veranstaltung event = new Veranstaltung(name, date, roomObject, capacity, t);
+        events.add(event);
 
     }
 
