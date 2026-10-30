@@ -17,6 +17,7 @@ sohn
 
 ## Methods
 
+* main() fills the List<Raum> rooms with elements that hold the repressenting room-number
 * getRooms() returns rooms 
 * addRoom() adds a element to the "rooms" List. the other methods do as the names describe
-
+* checRoomAtTimeslot() prints to the terminal wether or not the room is available at the given timeslot
