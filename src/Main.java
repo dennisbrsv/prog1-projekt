@@ -31,7 +31,7 @@ public class Main {
 
         for(Veranstaltung v : events) {
             if(v.getTimeslot().equals(t) && v.getRoom().getNumber() == room) {
-                System.out.println("Room " + room + " is already occupied at timeslot " + t);
+                System.out.println("Room " + room + " is already occupied at timeslot " + t.toString());
                 return;
             }
         }
